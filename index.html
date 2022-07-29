@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <div class="content">
+            <h1>Password Generator</h1>
+            <div class="container-100">
+                <a id="passwordError"></a>
+            </div>
+            <input type="number" id="length" value=16>
+            <button onclick="passwordGenerate()">Generate</button>
+            <textarea id="passwordOutput" cols="60" rows="1" readonly></textarea>
+            <button onclick="copyPassword()">Copy</button>
+            <button onclick="clearPassword()">Clear</button>
+            <div class="container-100">
+                <a class="note">*Please note that this generator currently does not use a cryptography random generator</a>
+            </div>
+        </div>
+    </body>
+</html>
