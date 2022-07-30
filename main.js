@@ -6,7 +6,7 @@ const lettersCaps = letters.toUpperCase()
 function passwordGenerate(){
     let length = document.getElementById("length").value
     let combined = numbers + letters + lettersCaps + symbols
-    let repeated = combined.repeat(Math.random() * 100)
+    let repeated = combined.repeat(32)
     let shuffled = repeated.split('').sort(function(){return 0.5-Math.random()}).join('')
     let password = shuffled.slice(0, length)
 
