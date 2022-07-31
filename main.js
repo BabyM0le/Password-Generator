@@ -1,11 +1,32 @@
-const numbers = '1234567890'
-const letters  = 'abcdefghijklmnopqrstuvwxyz'
-const symbols = '!@#$%^&*()~_-+={}[]:;<>,.?/|'
-const lettersCaps = letters.toUpperCase()
-
 function passwordGenerate(){
+    var symbols = '!@#$%^&*()~_-+={}[]:;<>,.?/|'
+    var numbers = '1234567890'
+    var letters  = 'abcdefghijklmnopqrstuvwxyz'
+    var lettersCaps = letters.toUpperCase()
+    var combined = ''
+
+    var symbolsChecked = document.getElementById("check1");  
+    var numbersChecked = document.getElementById("check2");  
+    var lowercaseChecked = document.getElementById("check3");  
+    var uppercaseChecked = document.getElementById("check4");
+
+    if(symbolsChecked.checked === true){
+        combined = combined + symbols
+    }
+
+    if(numbersChecked.checked === true){
+        combined = combined + numbers
+    }
+
+    if(lowercaseChecked.checked === true){
+        combined = combined + letters
+    }
+
+    if(uppercaseChecked.checked === true){
+        combined = combined + lettersCaps
+    }
+
     let length = document.getElementById("length").value
-    let combined = numbers + letters + lettersCaps + symbols
     let repeated = combined.repeat(32)
     let shuffled = repeated.split('').sort(function(){return 0.5-Math.random()}).join('')
     let password = shuffled.slice(0, length)

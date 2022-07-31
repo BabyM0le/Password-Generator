@@ -67,3 +67,13 @@ textarea {
     color: red;
     font-size: 0.5rem;
 }
+.checkboxes {
+    padding-top: 10px;
+}
+.checkboxes input {
+    border-color: red;
+    border-width: 10px;
+}
+input[type="checkbox"] {
+    background-color: aqua;
+}
