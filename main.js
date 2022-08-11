@@ -15,7 +15,7 @@ function passwordGenerate(){
         document.getElementById("check4"),
     ]
     for(let i = 0; i < 4; i++) {
-        if(passwordAltercations[i].checked === true){
+        if(passwordAltercations[i].checked == true){
             combined = combined + passwordItems[i]
         }
     }
