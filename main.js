@@ -1,4 +1,4 @@
-// Main Generate Password Function
+// Main generate password function
 function passwordGenerate(){
     let combined = ''
     const length = document.getElementById('length').value
@@ -15,7 +15,7 @@ function passwordGenerate(){
         document.getElementById('check4'),
     ]
 
-    // Adds Current Checkboxes
+    // Adds active checkboxes to a combined total
     for(let i = 0; i < 4; i++) {
         if(passwordAltercations[i].checked == true){
             combined += passwordItems[i]
@@ -28,7 +28,7 @@ function passwordGenerate(){
             return 0.5-Math.random()
         }).join('').slice(0, length)
 
-    // Call Errors
+    // Call errors
     if(length < 4){
         error('Password too short (4 - 32)')
     } else if(length > 32){
@@ -39,17 +39,17 @@ function passwordGenerate(){
     }
 }
 
-// Copy Password Function
+// Copy password function
 function copyPassword(){
     navigator.clipboard.writeText(document.getElementById('passwordOutput').value)
 }
 
-// Clear Password Function
+// Clear password function
 function clearPassword(){
     document.getElementById('passwordOutput').innerHTML=''
 }
 
-// Error
+// Error function
 function error(error){
     document.getElementById('passwordError').innerHTML=error
 }
