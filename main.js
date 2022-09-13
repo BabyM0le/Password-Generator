@@ -22,7 +22,7 @@ function passwordGenerate(){
         }
     }
 
-    // Generates Password
+    // Generates assword
     const password = combined.repeat(32).split('').sort(
         function() {
             return 0.5-Math.random()
