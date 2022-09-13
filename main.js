@@ -1,14 +1,14 @@
 // Main Generate Password Function
 function passwordGenerate(){
     let combined = ''
-    let length = document.getElementById("length").value
-    let passwordItems = [
+    const length = document.getElementById("length").value
+    const passwordItems = [
         '!@#$%^&*()~_-+={}[]:;<>,.?/|',
         '1234567890',
         'abcdefghijklmnopqrstuvwxyz',
         'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     ]
-    let passwordAltercations = [
+    const passwordAltercations = [
         document.getElementById("check1"),
         document.getElementById("check2"),  
         document.getElementById("check3"),  
@@ -16,10 +16,13 @@ function passwordGenerate(){
     ]
     for(let i = 0; i < 4; i++) {
         if(passwordAltercations[i].checked == true){
-            combined = combined + passwordItems[i]
+            combined += passwordItems[i]
         }
     }
-    let password = combined.repeat(32).split('').sort(function(){return 0.5-Math.random()}).join('').slice(0, length)
+    const password = combined.repeat(32).split('').sort(
+        function() {
+            return 0.5-Math.random()
+        }).join('').slice(0, length)
 
     if(length < 4){
         document.getElementById("passwordError").innerHTML='Password too short (4 - 32)'
@@ -33,8 +36,7 @@ function passwordGenerate(){
 
 // Copy Password Function
 function copyPassword(){
-    let copyPassword = document.getElementById("passwordOutput").value
-    navigator.clipboard.writeText(copyPassword)
+    navigator.clipboard.writeText(document.getElementById("passwordOutput").value)
 }
 
 // Clear Password Function
